@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087443">
+  <title>Medical Store Panel</title>
+  <link rel="stylesheet" href="store.css">
+</head>
+
+<body>
+
+<header class="store-header">
+  <div class="store-brand">
+    <div class="store-logo">+</div>
+    <div>
+      <h1>SARVAJANIK</h1>
+      <p>MEDICAL STORE PANEL</p>
+    </div>
+  </div>
+  <a href="index.html" class="home-link">Customer App</a>
+</header>
+
+<main class="store-container">
+
+  <!-- LOGIN SECTION -->
+  <section id="loginSection" class="panel-card login-card">
+    <h2>મેડિકલ સ્ટોર લોગિન</h2>
+    <p>તમારા ઈમેલ અને પાસવર્ડથી લોગિન કરો.</p>
+
+    <form id="loginForm">
+      <label for="loginEmail">ઈમેલ</label>
+      <input
+        type="email"
+        id="loginEmail"
+        placeholder="તમારો ઈમેલ"
+        required
+      >
+
+      <label for="loginPassword">પાસવર્ડ</label>
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="પાસવર્ડ"
+        required
+      >
+
+      <button type="submit">લોગિન કરો</button>
+      <p id="loginMessage" class="message"></p>
+    </form>
+  </section>
+
+  <!-- STORE DASHBOARD -->
+  <section id="dashboardSection" hidden>
+
+    <div class="welcome-card">
+      <div>
+        <h2>મેડિકલ સ્ટોર ડેશબોર્ડ</h2>
+        <p id="welcomeName">સ્વાગત છે!</p>
+      </div>
+      <button id="logoutButton" class="logout-button">
+        Logout
+      </button>
+    </div>
+
+    <!-- STORE SETTINGS -->
+    <section class="panel-card">
+      <h2>સ્ટોરની માહિતી</h2>
+
+      <form id="storeForm">
+
+        <label for="shopName">મેડિકલ સ્ટોરનું નામ</label>
+        <input
+          type="text"
+          id="shopName"
+          placeholder="સ્ટોરનું નામ"
+          required
+        >
+
+        <label for="shopAddress">સરનામું / ગામ</label>
+        <textarea
+          id="shopAddress"
+          placeholder="સ્ટોરનું સરનામું"
+          required
+        ></textarea>
+
+        <label for="shopPhone">કૉલ / સંપર્ક નંબર</label>
+        <input
+          type="tel"
+          id="shopPhone"
+          placeholder="કૉલ નંબર"
+          required
+        >
+
+        <label for="shopWhatsapp">WhatsApp નંબર</label>
+        <input
+          type="tel"
+          id="shopWhatsapp"
+          placeholder="WhatsApp નંબર"
+          required
+        >
+
+        <button type="submit">સ્ટોરની માહિતી સેવ કરો</button>
+        <p id="storeMessage" class="message"></p>
+
+      </form>
+    </section>
+
+    <!-- MEDICINE FORM -->
+    <section class="panel-card">
+      <h2 id="medicineFormTitle">નવી દવા ઉમેરો</h2>
+
+      <form id="medicineForm">
+
+        <input type="hidden" id="medicineId">
+
+        <label for="medicineName">દવાનું નામ</label>
+        <input
+          type="text"
+          id="medicineName"
+          placeholder="દવાનું નામ"
+          required
+        >
+
+        <label for="medicineCategory">કેટેગરી</label>
+        <select id="medicineCategory" required>
+          <option value="">કેટેગરી પસંદ કરો</option>
+          <option value="Tablet">Tablet</option>
+          <option value="Capsule">Capsule</option>
+          <option value="Syrup">Syrup</option>
+          <option value="Injection">Injection</option>
+          <option value="Cream">Cream</option>
+          <option value="Drops">Drops</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="medicineInfo">દવાની માહિતી</label>
+        <textarea
+          id="medicineInfo"
+          placeholder="દવાની સામાન્ય માહિતી"
+        ></textarea>
+
+        <label for="medicinePrice">ભાવ (₹)</label>
+        <input
+          type="number"
+          id="medicinePrice"
+          min="0"
+          step="0.01"
+          placeholder="દવાનો ભાવ"
+          required
+        >
+
+        <label for="medicineUnit">એકમ</label>
+        <select id="medicineUnit" required>
+          <option value="પેક">પેક</option>
+          <option value="ટેબ્લેટ">ટેબ્લેટ</option>
+          <option value="બોટલ">બોટલ</option>
+          <option value="સ્ટ્રીપ">સ્ટ્રીપ</option>
+          <option value="ટ્યુબ">ટ્યુબ</option>
+          <option value="પીસ">પીસ</option>
+        </select>
+
+        <label for="medicineStock">સ્ટોકની સંખ્યા</label>
+        <input
+          type="number"
+          id="medicineStock"
+          min="0"
+          step="1"
+          placeholder="સ્ટોક"
+          required
+        >
+
+        <label class="check-label">
+          <input type="checkbox" id="prescriptionRequired">
+          પ્રિસ્ક્રિપ્શન જરૂરી છે
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" id="medicineActive" checked>
+          દવા ગ્રાહકને બતાવો
+        </label>
+
+        <button type="submit" id="saveMedicineButton">
+          દવા સેવ કરો
+        </button>
+
+        <button
+          type="button"
+          id="cancelEditButton"
+          class="secondary-button"
+          hidden
+        >
+          ફેરફાર રદ કરો
+        </button>
+
+        <p id="medicineMessage" class="message"></p>
+
+      </form>
+    </section>
+
+    <!-- MEDICINE LIST -->
+    <section class="panel-card">
+      <h2>મારી દવાઓ</h2>
+      <div id="storeMedicineList">
+        દવાઓ લોડ થઈ રહી છે...
+      </div>
+    </section>
+
+    <!-- ORDERS -->
+    <section class="panel-card">
+      <h2>ગ્રાહકોના ઓર્ડર</h2>
+      <p class="section-note">
+        ઓર્ડરની વિગતો, પાર્સલની સ્થિતિ અને કુરિયર ટ્રેકિંગ અહીં દેખાશે.
+      </p>
+      <div id="storeOrderList">
+        હાલમાં કોઈ ઓર્ડર નથી.
+      </div>
+    </section>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 SARVAJANIK MEDICAL STORES</p>
+  <p>Secure Medical Store Panel</p>
+</footer>
+
+<script type="module" src="store.js"></script>
+
+</body>
+</html>
