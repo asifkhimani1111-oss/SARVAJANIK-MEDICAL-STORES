@@ -1,0 +1,13 @@
+
+{
+  "name": "SARVAJANIK MEDICAL STORES",
+  "short_name": "SARVAJANIK",
+  "description": "Medical Store Customer App and Store Panel",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#087443",
+  "lang": "gu"
+}
