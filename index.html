@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#087443">
+<title>K.H ALL-IN-ONE GUJARATI</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f2f7f4;color:#202820}
+header{background:linear-gradient(135deg,#087443,#10a36a);color:white;padding:22px 16px 18px;border-radius:0 0 22px 22px}
+header h1{font-size:23px;margin:0 0 7px}
+header p{margin:0;font-size:13px}
+.container{padding:15px;max-width:750px;margin:auto}
+.search{width:100%;padding:14px;border:1px solid #d6e4da;border-radius:12px;font-size:16px;margin-bottom:15px}
+.section-title{font-size:18px;font-weight:bold;margin:17px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:white;padding:17px 12px;border-radius:16px;border:1px solid #e2eee6;box-shadow:0 3px 10px #00000008;cursor:pointer;text-align:center}
+.card:active{transform:scale(.97)}
+.card .emoji{font-size:30px;display:block;margin-bottom:8px}
+.card strong{font-size:14px}
+.card small{display:block;color:#758078;margin-top:5px}
+button{border:0;border-radius:10px;padding:12px 15px;background:#087443;color:white;font-size:14px;cursor:pointer;margin:4px 2px}
+button.secondary{background:#e5f2e9;color:#087443}
+button.orange{background:#f18a24}
+input,select,textarea{width:100%;padding:12px;border:1px solid #d8e4dc;border-radius:10px;font-size:15px;margin:6px 0 12px;background:white}
+textarea{min-height:90px;resize:vertical}
+.panel{background:white;padding:17px;border-radius:15px;margin-top:12px;border:1px solid #e2eee6}
+.hidden{display:none!important}
+.back{background:#e2f1e7;color:#087443}
+.result{padding:13px;background:#eaf6ed;border-radius:10px;margin:10px 0;line-height:1.7}
+.item{padding:12px;background:white;border-radius:10px;margin:8px 0;border:1px solid #e2eee6;line-height:1.6}
+footer{text-align:center;color:#7a887e;padding:25px 10px;font-size:12px}
+nav{position:sticky;bottom:0;background:white;border-top:1px solid #e2e9e4;display:flex;justify-content:space-around;padding:9px 3px;z-index:5}
+nav button{background:transparent;color:#087443;margin:0;padding:7px;font-size:12px}
+a{color:#087443}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌿 K.H ALL-IN-ONE GUJARATI</h1>
+  <p>તમારી રોજિંદી જરૂરિયાતો માટે એક જ એપ</p>
+</header>
+
+<div class="container">
+  <div id="home">
+    <div class="panel">
+      <strong>🙏 નમસ્તે!</strong>
+      <p style="margin-bottom:0">આપનું K.H ALL-IN-ONE GUJARATI માં સ્વાગત છે.</p>
+    </div>
+
+    <div class="section-title">🔎 શું શોધવું છે?</div>
+    <input class="search" id="search" placeholder="વિભાગ શોધો..." oninput="searchCards()">
+
+    <div class="section-title">📱 બધા વિભાગો</div>
+    <div class="grid" id="mainGrid">
+      <div class="card" data-name="quiz general knowledge પ્રશ્નો" onclick="openPage('quiz')"><span class="emoji">🧠</span><strong>ગુજરાતી ક્વિઝ</strong><small>જ્ઞાન વધારો</small></div>
+      <div class="card" data-name="wishes status શુભેચ્છા" onclick="openPage('wishes')"><span class="emoji">🎉</span><strong>શુભેચ્છા અને સ્ટેટસ</strong><small>શેર કરો</small></div>
+      <div class="card" data-name="tools calculator ટૂલ્સ" onclick="openPage('tools')"><span class="emoji">🧮</span><strong>ઓલ-ઇન-વન ટૂલ્સ</strong><small>ઉપયોગી ગણતરી</small></div>
+      <div class="card" data-name="learning english ગુજરાતી શીખો" onclick="openPage('learning')"><span class="emoji">📚</span><strong>ગુજરાતી લર્નિંગ</strong><small>English શબ્દો શીખો</small></div>
+      <div class="card" data-name="videos ગુજરાતી વિડિઓ" onclick="openPage('videos')"><span class="emoji">🎬</span><strong>ગુજરાતી વીડિયો</strong><small>વીડિયો શોધો</small></div>
+      <div class="card" data-name="jokes જોક્સ રમૂજ" onclick="openPage('jokes')"><span class="emoji">😂</span><strong>ગુજરાતી જોક્સ</strong><small>હસતા રહો</small></div>
+      <div class="card" data-name="news સમાચાર" onclick="openPage('news')"><span class="emoji">📰</span><strong>સમાચાર</strong><small>સમાચાર વાંચો</small></div>
+      <div class="card" data-name="thoughts વિચારો" onclick="openPage('thoughts')"><span class="emoji">💡</span><strong>દૈનિક વિચારો</strong><small>સારા વિચારો</small></div>
+      <div class="card" data-name="riddles ઉખાણાં કોયડા" onclick="openPage('riddles')"><span class="emoji">❓</span><strong>ઉખાણાં અને રમતો</strong><small>મગજ કસો</small></div>
+      <div class="card" data-name="saved પસંદ કરેલું" onclick="openPage('saved')"><span class="emoji">❤️</span><strong>મારી પસંદગી</strong><small>સેવ કરેલી વસ્તુઓ</small></div>
+    </div>
+  </div>
+
+  <div id="content" class="hidden">
+    <button class="back" onclick="goHome()">← પાછા જાઓ</button>
+    <div id="pageContent"></div>
+  </div>
+</div>
+
+<nav>
+  <button onclick="goHome()">🏠<br>હોમ</button>
+  <button onclick="openPage('quiz')">🧠<br>ક્વિઝ</button>
+  <button onclick="openPage('tools')">🧮<br>ટૂલ્સ</button>
+  <button onclick="openPage('saved')">❤️<br>પસંદગી</button>
+</nav>
+
+<footer>
+  K.H ALL-IN-ONE GUJARATI<br>
+  મફત એપ | તમારો ડેટા તમારા મોબાઇલમાં
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+let saved=JSON.parse(localStorage.getItem("kh_saved")||"[]");
+let currentQuiz=0,score=0;
+
+function saveData(){
+ localStorage.setItem("kh_saved",JSON.stringify(saved));
+}
+function goHome(){
+ $("home").classList.remove("hidden");
+ $("content").classList.add("hidden");
+}
+function openPage(page){
+ $("home").classList.add("hidden");
+ $("content").classList.remove("hidden");
+ const box=$("pageContent");
+ const pages={
+ quiz:quizPage,
+ wishes:wishesPage,
+ tools:toolsPage,
+ learning:learningPage,
+ videos:videosPage,
+ jokes:jokesPage,
+ news:newsPage,
+ thoughts:thoughtsPage,
+ riddles:riddlesPage,
+ saved:savedPage
+ };
+ box.innerHTML="";
+ if(pages[page]) pages[page](box);
+ window.scrollTo(0,0);
+}
+function searchCards(){
+ const q=$("search").value.toLowerCase();
+ document.querySelectorAll("#mainGrid .card").forEach(c=>{
+ c.style.display=c.dataset.name.includes(q)?"block":"none";
+ });
+}
+function shareText(text){
+ if(navigator.share){
+  navigator.share({text:text}).catch(()=>{});
+ }else{
+  navigator.clipboard.writeText(text).then(()=>alert("કોપી થઈ ગયું. હવે શેર કરો."));
+ }
+}
+function toggleSave(text){
+ const i=saved.indexOf(text);
+ if(i>=0){saved.splice(i,1);alert("પસંદગીમાંથી દૂર થયું");}
+ else{saved.push(text);alert("સેવ થઈ ગયું ❤️");}
+ saveData();
+}
+function pageTitle(box,title){
+ box.innerHTML=`<h2>${title}</h2>`;
+}
+const questions=[
+ {q:"ગુજરાતની રાજધાની કઈ છે?",o:["અમદાવાદ","ગાંધીનગર","સુરત"],a:1},
+ {q:"ભારતનો રાષ્ટ્રીય પક્ષી કયો છે?",o:["મોર","કબૂતર","ગરુડ"],a:0},
+ {q:"સૌરમંડળનો સૌથી મોટો ગ્રહ કયો છે?",o:["પૃથ્વી","મંગળ","ગુરુ"],a:2},
+ {q:"ભારતનો રાષ્ટ્રીય ફૂલ કયો છે?",o:["ગુલાબ","કમળ","સૂર્યમુખી"],a:1},
+ {q:"ગુજરાતનો સ્થાપના દિવસ ક્યારે છે?",o:["1 મે","15 ઓગસ્ટ","26 જાન્યુઆરી"],a:0}
+];
+function quizPage(box){
+ pageTitle(box,"🧠 ગુજરાતી ક્વિઝ");
+ currentQuiz=0;score=0;
+ showQuestion(box);
+}
+function showQuestion(box){
+ if(currentQuiz>=questions.length){
+ box.innerHTML=`<h2>ક્વિઝ પૂરી થઈ! 🎉</h2><div class="result">તમારો સ્કોર: ${score}/${questions.length}</div><button onclick="quizPage($('pageContent'))">ફરી રમો</button>`;
+ return;
+ }
+ let q=questions[currentQuiz];
+ box.innerHTML=`<h2>પ્રશ્ન ${currentQuiz+1}/${questions.length}</h2>
+ <div class="panel"><h3>${q.q}</h3>
+ ${q.o.map((v,i)=>`<button class="secondary" style="display:block;width:100%;text-align:left" onclick="answerQuiz(${i})">${v}</button>`).join("")}
+ </div><div id="quizResult"></div>`;
+}
+function answerQuiz(n){
+ const q=questions[currentQuiz];
+ if(n===q.a)score++;
+ $("quizResult").innerHTML=`<div class="result">${n===q.a?"સાચો જવાબ! ✅":"ખોટો જવાબ. સાચો જવાબ: "+q.o[q.a]}</div><button onclick="currentQuiz++;showQuestion($('pageContent'))">આગળનો પ્રશ્ન →</button>`;
+}
+
+function wishesPage(box){
+ pageTitle(box,"🎉 શુભેચ્છા અને સ્ટેટસ");
+ const wishes=[
+ "તમારો આજનો દિવસ આનંદ અને ખુશીઓથી ભરેલો રહે. શુભ સવાર! 🌞",
+ "તમારા જીવનમાં હંમેશાં સુખ, શાંતિ અને સમૃદ્ધિ રહે. 🙏",
+ "મહેનત કરતા રહો, સફળતા એક દિવસ જરૂર મળશે. 💪",
+ "તમારા દરેક સપના સાકાર થાય તેવી શુભકામનાઓ. 🌹",
+ "હસતા રહો અને બીજાને પણ હસાવતા રહો. 😊"
+ ];
+ wishes.forEach(w=>box.innerHTML+=`<div class="item">${w}<br><button onclick="shareText(${JSON.stringify(w)})">શેર કરો</button><button class="secondary" onclick="toggleSave(${JSON.stringify(w)})">❤️ સેવ</button></div>`);
+}
+function toolsPage(box){
+ pageTitle(box,"🧮 ઉપયોગી ટૂલ્સ");
+ box.innerHTML+=`
+ <div class="panel"><h3>કેલ્ક્યુલેટર</h3>
+ <input id="n1" type="number" placeholder="પહેલી સંખ્યા">
+ <select id="op"><option value="+">ઉમેરો (+)</option><option value="-">બાદબાકી (-)</option><option value="*">ગુણાકાર (×)</option><option value="/">ભાગાકાર (÷)</option></select>
+ <input id="n2" type="number" placeholder="બીજી સંખ્યા">
+ <button onclick="calculate()">જવાબ મેળવો</button><div id="calcResult"></div></div>
+ <div class="panel"><h3>ટકાવારી (%)</h3>
+ <input id="percentA" type="number" placeholder="કુલ સંખ્યા">
+ <input id="percentB" type="number" placeholder="કેટલા ટકા?">
+ <button onclick="percentage()">ગણતરી કરો</button><div id="percentResult"></div></div>
+ <div class="panel"><h3>કિલો ગ્રામથી ગ્રામ</h3>
+ <input id="kg" type="number" placeholder="કિલો ગ્રામ">
+ <button onclick="kgConvert()">રૂપાંતર કરો</button><div id="kgResult"></div></div>
+ <div class="panel"><h3>ઉંમર ગણો</h3>
+ <label>જન્મ તારીખ</label><input id="dob" type="date">
+ <button onclick="ageCalc()">ઉંમર ગણો</button><div id="ageResult"></div></div>`;
+}
+function calculate(){
+ let a=Number($("n1").value),b=Number($("n2").value),op=$("op").value;
+ if($("n1").value===""||$("n2").value==="")return alert("બંને સંખ્યા લખો");
+ if(op==="/"&&b===0)return alert("શૂન્યથી ભાગાકાર થઈ શકતો નથી");
+ let r=op==="+"?a+b:op==="-"?a-b:op==="*"?a*b:a/b;
+ $("calcResult").innerHTML=`<div class="result">જવાબ: ${r}</div>`;
+}
+function percentage(){
+ let a=Number($("percentA").value),b=Number($("percentB").value);
+ if(!$("percentA").value||!$("percentB").value)return alert("બંને માહિતી લખો");
+ $("percentResult").innerHTML=`<div class="result">જવાબ: ${(a*b/100).toFixed(2)}</div>`;
+}
+function kgConvert(){
+ let v=$("kg").value;
+ if(v==="")return alert("કિલો ગ્રામ લખો");
+ $("kgResult").innerHTML=`<div class="result">${v} કિલો ગ્રામ = ${Number(v)*1000} ગ્રામ</div>`;
+}
+function ageCalc(){
+ let v=$("dob").value;
+ if(!v)return alert("જન્મ તારીખ પસંદ કરો");
+ let d=new Date(v),t=new Date();
+ if(d>t)return alert("ભવિષ્યની તારીખ પસંદ કરી શકાતી નથી");
+ let years=t.getFullYear()-d.getFullYear();
+ let months=t.getMonth()-d.getMonth();
+ let days=t.getDate()-d.getDate();
+ if(days<0){months--;days+=new Date(t.getFullYear(),t.getMonth(),0).getDate();}
+ if(months<0){years--;months+=12;}
+ $("ageResult").innerHTML=`<div class="result">તમારી ઉંમર: ${years} વર્ષ, ${months} મહિના અને ${days} દિવસ</div>`;
+}
+const words=[
+ ["Apple","સફરજન"],["Book","પુસ્તક"],["Water","પાણી"],["School","શાળા"],["Friend","મિત્ર"],["Family","પરિવાર"],["Sun","સૂર્ય"],["Moon","ચંદ્ર"],["House","ઘર"],["Flower","ફૂલ"],["Tree","વૃક્ષ"],["River","નદી"],["Food","ખોરાક"],["Love","પ્રેમ"],["Happy","ખુશ"]
+];
+function learningPage(box){
+ pageTitle(box,"📚 English થી ગુજરાતી");
+ words.forEach(w=>box.innerHTML+=`<div class="item"><b>${w[0]}</b> = ${w[1]} <button class="secondary" onclick="shareText('${w[0]} = ${w[1]}')">શેર</button></div>`);
+}
+function videosPage(box){
+ pageTitle(box,"🎬 ગુજરાતી વીડિયો");
+ box.innerHTML+=`<div class="panel"><p>ગુજરાતી વીડિયો જોવા માટે વિષય પસંદ કરો.</p>
+ ${["ગુજરાતી ભજન","ગુજરાતી વાર્તા","ગુજરાતી કોમેડી","ગુજરાતી શિક્ષણ","ગુજરાતી સમાચાર"].map(v=>`<div class="item">${v}<br><button onclick="window.open('https://www.youtube.com/results?search_query='+encodeURIComponent('${v}'),'_blank')">વીડિયો જુઓ ▶</button></div>`).join("")}
+ <small>વીડિયો YouTube પર ખુલશે. ઇન્ટરનેટ જરૂરી છે.</small></div>`;
+}
+const jokes=[
+ "શિક્ષક: દુનિયામાં સૌથી વધુ ધીરજ કોની પાસે હોય છે? વિદ્યાર્થી: મોબાઇલની બેટરી 1% હોય ત્યારે પણ વીડિયો જોનારની પાસે! 😂",
+ "મિત્ર: તું રોજ વહેલો કેમ ઊઠે છે? બીજો: કારણ કે મોડું ઊઠું તો ફરી ઊંઘવાનો સમય ઓછો મળે! 😄",
+ "શિક્ષક: હોમવર્ક કેમ નથી કર્યું? વિદ્યાર્થી: સર, પેનને રજા આપી હતી! 😂",
+ "મમ્મી: ભણવા બેઠો? દીકરો: હા, પુસ્તકની સામે બેઠો છું! 😁"
+];
+function jokesPage(box){
+ pageTitle(box,"😂 ગુજરાતી જોક્સ");
+ jokes.forEach(j=>box.innerHTML+=`<div class="item">${j}<br><button onclick="shareText(${JSON.stringify(j)})">શેર કરો</button><button class="secondary" onclick="toggleSave(${JSON.stringify(j)})">❤️ સેવ</button></div>`);
+}
+function newsPage(box){
+ pageTitle(box,"📰 સમાચાર");
+ box.innerHTML+=`<div class="panel"><p>તાજા સમાચાર જોવા માટે નીચે પસંદ કરો.</p>
+ ${["ગુજરાત સમાચાર","ભારત સમાચાર","રમતગમત સમાચાર","વિશ્વ સમાચાર","બિઝનેસ સમાચાર"].map(v=>`<div class="item">${v}<br><button onclick="window.open('https://www.google.com/search?tbm=nws&q='+encodeURIComponent('${v}'),'_blank')">સમાચાર વાંચો</button></div>`).join("")}
+ <small>સમાચાર માટે ઇન્ટરનેટ જરૂરી છે. આ એપ પોતે સમાચાર પ્રકાશિત કરતી નથી.</small></div>`;
+}
+const thoughts=[
+ "સફળતા મેળવવા માટે સતત પ્રયત્ન કરતા રહો.",
+ "સમયની કદર કરનાર વ્યક્તિ જીવનમાં આગળ વધે છે.",
+ "નાની શરૂઆત પણ મોટા પરિણામ આપી શકે છે.",
+ "જ્ઞાન એવી સંપત્તિ છે જે કોઈ છીનવી શકતું નથી.",
+ "સારા વિચારો અને સારા કર્મ જીવનને સુંદર બનાવે છે.",
+ "દરેક દિવસ નવી તક લઈને આવે છે."
+];
+function thoughtsPage(box){
+ pageTitle(box,"💡 સારા વિચારો");
+ thoughts.forEach(t=>box.innerHTML+=`<div class="item">🌼 ${t}<br><button onclick="shareText(${JSON.stringify(t)})">શેર કરો</button><button class="secondary" onclick="toggleSave(${JSON.stringify(t)})">❤️ સેવ</button></div>`);
+}
+const riddles=[
+ {q:"એવી કઈ વસ્તુ છે જે પાણી પીવાથી મરી જાય છે?",a:"આગ 🔥"},
+ {q:"દાંત છે પણ ખાઈ શકતું નથી, એ શું?",a:"કાંસકો"},
+ {q:"જેટલું વધારે કાઢો એટલું મોટું થાય, એ શું?",a:"ખાડો"},
+ {q:"પગ નથી છતાં ચાલે છે, એ શું?",a:"ઘડિયાળ"}
+];
+function riddlesPage(box){
+ pageTitle(box,"❓ ઉખાણાં અને કોયડા");
+ riddles.forEach((r,i)=>box.innerHTML+=`<div class="item"><b>${i+1}. ${r.q}</b><br><button class="secondary" onclick="this.nextElementSibling.classList.toggle('hidden')">જવાબ જુઓ</button><p class="hidden result">${r.a}</p></div>`);
+}
+function savedPage(box){
+ pageTitle(box,"❤️ મારી પસંદગી");
+ if(!saved.length){box.innerHTML+="<div class='result'>હજુ કોઈ વસ્તુ સેવ કરી નથી.</div>";return;}
+ saved.forEach((s,i)=>box.innerHTML+=`<div class="item">${s}<br><button onclick="shareText(${JSON.stringify(s)})">શેર</button><button class="orange" onclick="removeSaved(${i})">દૂર કરો</button></div>`);
+ box.innerHTML+=`<button class="orange" onclick="clearSaved()">બધી પસંદગી દૂર કરો</button>`;
+}
+function removeSaved(i){saved.splice(i,1);saveData();savedPage($("pageContent"));}
+function clearSaved(){if(confirm("બધી સેવ કરેલી વસ્તુઓ દૂર કરવી છે?")){saved=[];saveData();savedPage($("pageContent"));}}
+</script>
+</body>
+</html>
